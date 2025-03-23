@@ -1,6 +1,6 @@
 -- General Settings
 vim.opt.number = true               -- Show line numbers
-vim.opt.relativenumber = true       -- Relative line numbers
+vim.opt.relativenumber = false       -- Relative line numbers
 vim.opt.wrap = false                -- Disable line wrapping
 vim.opt.cursorline = true           -- Highlight the current line
 vim.opt.signcolumn = "yes"          -- Always show the sign column

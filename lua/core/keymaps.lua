@@ -24,6 +24,9 @@ keymap("n", "<leader>tp", ":tabprev<CR>", opts)  -- Previous tab
 
 -- File Explorer (nvim-tree)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Toggle file explorer
+keymap("n", "<leader>fe", ":NvimTreeFocus<CR>", { noremap = true, silent = true, desc = "Focus NvimTree" })
+keymap("n", "<leader>fc", ":NvimTreeFindFile<CR>", { noremap = true, silent = true, desc = "Find File in NvimTree" })
+
 
 -- Move Between Windows
 keymap("n", "<C-h>", "<C-w>h", opts)             -- Move to left window
@@ -37,7 +40,7 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)  -- Decrease height
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts) -- Decrease width
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- Increase width
 
-
+keymap("i", ";;", "<ESC>", opts) 
 
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
