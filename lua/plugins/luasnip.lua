@@ -1,4 +1,4 @@
-return {
+return{
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" }, -- Collection of snippets
     config = function()
@@ -21,4 +21,3 @@ return {
       end, { silent = true })
     end,
   }
-  

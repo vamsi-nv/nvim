@@ -40,8 +40,7 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)  -- Decrease height
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts) -- Decrease width
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- Increase width
 
-keymap("i", ";;", "<ESC>", opts) 
-
-vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", { noremap = true, silent = true }) -- Close buffer
+keymap("n", "<TAB>", "<Cmd>BufferNext<CR>", opts)
+keymap("n", "<S-TAB>", "<Cmd>BufferPrevious<CR>", opts)
+keymap("n", "<leader>c", "<Cmd>BufferClose<CR>", opts)
+keymap("n", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
