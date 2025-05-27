@@ -91,7 +91,6 @@ require("lazy").setup({
 	{ import = "plugins" },
 })
 
--- Set PowerShell as default shell in Neovim (Windows)
 if vim.loop.os_uname().sysname == "Windows_NT" then
 	vim.opt.shell = "powershell"
 	vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"

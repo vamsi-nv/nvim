@@ -12,7 +12,15 @@ return {
 	},
 	opts = {
 		filesystem = {
+			filtered_items = {
+				hide_dotfiles = false, -- Show dotfiles
+				hide_gitignored = false, -- Show git-ignored files
+			},
+			follow_current_file = {
+				enabled = true, -- Auto-focus the current file
+			},
 			window = {
+				position = "left",
 				width = 25,
 				mappings = {
 					["\\"] = "close_window",
