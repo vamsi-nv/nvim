@@ -83,7 +83,10 @@ require("lazy").setup({
 		config = function()
 			require("mini.indentscope").setup({
 				symbol = "│", -- Can be '▏', '┊', etc.
-				options = { try_as_border = true },
+				options = { try_as_border = false },
+				exclude = {
+					filetypes = { "help", "dashboard", "starter", "lazy", "markdown" }, -- Skip these
+				},
 			})
 		end,
 	},
