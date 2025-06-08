@@ -78,17 +78,20 @@ require("lazy").setup({
 	},
 
 	{
-		"echasnovski/mini.indentscope",
-		version = false,
-		config = function()
-			require("mini.indentscope").setup({
-				symbol = "│", -- Can be '▏', '┊', etc.
-				options = { try_as_border = false },
-				exclude = {
-					filetypes = { "help", "dashboard", "starter", "lazy", "markdown" }, -- Skip these
-				},
-			})
-		end,
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			indent = { char = "│" }, -- or try "▏", "┆", "⎸"
+			scope = {
+				enabled = false,
+				show_start = false,
+				show_end = false,
+			},
+			exclude = {
+				filetypes = { "help", "neo-tree", "lazy", "dashboard" },
+				buftypes = { "terminal", "nofile" },
+			},
+		},
 	},
 
 	{ import = "plugins" },

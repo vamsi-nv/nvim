@@ -8,7 +8,7 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
+vim.keymap.set("n", "<TAB>", "<cmd>:bn<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
