@@ -53,10 +53,6 @@ map("t", "<C-n>", "<C-\\><C-n> :bnext<CR>", opts)
 map("n", "<Esc>", ":nohlsearch<CR>", opts)
 map("n", "<leader>q", ":quit<CR>", opts)
 
-map({ "n", "x", "o" }, "/", function()
-	require("flash").jump()
-end)
-
 map("n", "<leader>e", function()
 	Snacks.explorer()
 end)
