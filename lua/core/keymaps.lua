@@ -1,0 +1,80 @@
+vim.g.mapleader = " "
+
+local map = vim.keymap.set
+local opts = { silent = true }
+
+-- map("n", "n", "nzzzv", opts)
+-- map("n", "N", "Nzzzv", opts)
+-- map("n", "<C-d>", "<C-d>zz", opts)
+-- map("n", "<C-u>", "<C-u>zz", opts)
+
+map("n", "<C-Up>", ":resize +2<CR>", opts)
+map("n", "<C-Down>", ":resize -2<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+
+map("t", "<C-h>", "<C-\\><C-n> <C-w>h", opts)
+map("t", "<C-j>", "<C-\\><C-n> <C-w>j", opts)
+map("t", "<C-k>", "<C-\\><C-n> <C-w>k", opts)
+map("t", "<C-l>", "<C-\\><C-n> <C-w>l", opts)
+
+map("n", "<A-j>", ":m .+1<CR>==", opts)
+map("n", "<A-k>", ":m .-2<CR>==", opts)
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+map("n", "<leader>bn", ":bnext<CR>", opts)
+map("n", "<leader>bp", ":bprev<CR>", opts)
+map("n", "<leader>bd", ":bdelete<CR>", opts)
+
+map("n", "<leader>tn", ":tabnew<CR>", opts)
+map("n", "<leader>tc", ":tabclose<CR>", opts)
+map("n", "<leader>tl", ":tabnext<CR>", opts)
+map("n", "<leader>th", ":tabprev<CR>", opts)
+
+-- map("n", "<leader>sh", ":split<CR>", opts)
+-- map("n", "<leader>sv", ":vsplit<CR>", opts)
+
+map("n", "<leader>vt", ":vsplit<CR> <C-w>l :term<CR>")
+
+map("n", "[d", vim.diagnostic.goto_prev, opts)
+map("n", "]d", vim.diagnostic.goto_next, opts)
+map("n", "<leader>ld", vim.diagnostic.open_float, opts)
+
+map("t", "<Esc>", "<C-\\><C-n>", opts)
+map("t", "<C-n>", "<C-\\><C-n> :bnext<CR>", opts)
+map("n", "<Esc>", ":nohlsearch<CR>", opts)
+map("n", "<leader>q", ":quit<CR>", opts)
+
+map({ "n", "x", "o" }, "/", function()
+	require("flash").jump()
+end)
+
+map("n", "<leader>e", function()
+	Snacks.explorer()
+end)
+map("n", "<leader>ff", function()
+	Snacks.picker.files()
+end)
+map("n", "<leader><leader>", function()
+	Snacks.picker.buffers()
+end)
+map("n", "<leader>fg", function()
+	Snacks.picker.grep()
+end)
+map("n", "<leader>fd", function()
+	Snacks.picker.diagnostics()
+end)
+map("n", "<leader>ut", function()
+	Snacks.picker.colorschemes()
+end)
+map("n", "<C-`>", function()
+	Snacks.terminal()
+end)
