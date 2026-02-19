@@ -19,6 +19,14 @@ vim.opt.cursorline = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "single"
 vim.opt.wrap = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.lsp.set_log_level("OFF")
+	end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",

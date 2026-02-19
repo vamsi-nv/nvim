@@ -42,7 +42,7 @@ map("n", "<leader>th", ":tabprev<CR>", opts)
 -- map("n", "<leader>sh", ":split<CR>", opts)
 -- map("n", "<leader>sv", ":vsplit<CR>", opts)
 
-map("n", "<leader>vt", ":vsplit<CR> <C-w>l :term<CR>")
+-- map("n", "<leader>vt", ":vsplit<CR> <C-w>l :term<CR>")
 
 map("n", "[d", vim.diagnostic.goto_prev, opts)
 map("n", "]d", vim.diagnostic.goto_next, opts)
